@@ -1,0 +1,125 @@
+/* CustomDropdown.css */
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .custom-dropdown i {
+    margin-right: 5px;
+  }
+  
+  #cart-count {
+    background-color: #f00;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 50%;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+  
+  .custom-dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Add some padding to the dropdown content */
+  .dropdown-content {
+    padding: 10px;
+  }
+  /* PanelItemDropdown.css */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Adjust this value to position the dropdown below the button */
+  left: 0;
+  z-index: 1;
+  display: none;
+  min-width: 120px;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background-color: transparent;
+  color: #333;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background-color: #e9ecef;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+/* Style for the cart dropdown trigger */
+#cart-dropdown-trigger {
+  position: relative;
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Style for the cart icon */
+#cart-dropdown-trigger i {
+  margin-right: 5px;
+}
+
+/* Style for the cart count badge */
+#cart-count {
+  background-color: #f00;
+  color: #fff;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+/* Style for the cart dropdown content */
+.cart-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+/* Show the dropdown content on hover */
+#cart-dropdown-trigger:hover + .cart-dropdown-content {
+  display: block;
+}
+
+/* Add some padding to the dropdown content */
+.cart-dropdown-content {
+  padding: 10px;
+}

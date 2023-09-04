@@ -1,0 +1,72 @@
+.card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+/* orders-page.css */
+
+.orders-page {
+    padding: 20px;
+  }
+  
+  .orders-page h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .orders-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none; /* Remove bullet points from the list */
+    padding: 0;
+  }
+  
+  .col-md-2 {
+    flex: 0 0 300px; /* Fixed width for each card */
+  }
+  
+  .order-card {
+    border: 5px solidrgb(30, 29, 29)c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow to the card */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px; /* Fixed height for each card */
+    margin: 10px; /* Add margin around each card */
+    border-radius: 2pc;
+  }
+  
+  .order-card img {
+    max-width: 100%;
+    max-height: 150px;
+    margin-top: 10px;
+  }
+  
+  .order-item-actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 2pc;
+  }
+  
+  .col-md-2  button {
+    padding: 8px 12px;
+    cursor: pointer;
+    flex: 1;
+    margin-right: 5px;
+    border-radius: 2pc;
+
+  }
+  
+  .col-md-2 button.remove {
+    background-color: #ff7a7a;
+    color: #fff;
+  }
+  
+  .col-md-2  button.confirm {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  

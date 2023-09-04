@@ -1,0 +1,124 @@
+.user-login-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Initially hidden off-screen */
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out;
+  }
+  
+  .user-login-sidebar.open {
+    right: 0; /* Slide in when open */
+  }
+  
+  .user-login-content {
+    padding: 20px;
+  }
+  
+  .user-login-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .user-login-content form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .user-login-content form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .user-login-content form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .user-login-content form p {
+    margin-top: 15px;
+  }
+  
+  .user-login-content form p a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .user-login-content form p a:hover {
+    text-decoration: underline;
+  }
+  .user-registration-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Initially hidden off-screen */
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out;
+  }
+  
+  .user-registration-sidebar.open {
+    right: 0; /* Slide in when open */
+  }
+  
+  .user-registration-content {
+    padding: 20px;
+  }
+  
+  .user-registration-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .user-registration-content form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .user-registration-content form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .user-registration-content form button:hover {
+    background-color: #0056b3;
+  }
+  .user-login-sidebar,
+  .user-registration-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000; /* Set a higher z-index */
+  }
+
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }      

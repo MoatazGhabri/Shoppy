@@ -1,0 +1,63 @@
+/* CartSidebar.css */
+
+/* Styling for the main cart sidebar container */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Start offscreen */
+    width: 400px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+  }
+  
+  /* Display the cart sidebar when it's open */
+  .cart-sidebar.open {
+    right: 0;
+  }
+  
+  /* Styling for the cart content area */
+  .cart-content {
+    padding: 20px;
+    max-height: calc(100vh - 60px); /* Adjust as needed */
+    overflow-y: auto; 
+  }
+  
+  /* Styling for the added products list */
+  .added-products {
+    margin-top: 20px;
+  }
+  
+ 
+/* Styling for the added product */
+.added-product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align content at both ends */
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for product information in the added product */
+  .product-info {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Add some spacing between the image and text */
+  }
+  
+  .product-info img {
+    max-width: 80px;
+    margin-right: 10px;
+  }
+  
+  .product-info h3 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .product-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #888;
+  }
+  
