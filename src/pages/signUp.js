@@ -17,7 +17,7 @@ const UserLoginSidebar = ({ isOpen, onClose, onShowRegistration, setIsLoggedIn }
       }
 
       // Implement your actual login API call using axios
-      const response = await axios.post("http://localhost:5001/api/login", {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/login`, {
         email,
         password,
       });

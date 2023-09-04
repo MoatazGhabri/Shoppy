@@ -12,7 +12,7 @@ const UserRegistrationSidebar = ({ isOpen, onClose, onShow, onRegistrationSucces
 
   const handleRegistration = async () => {
     try {
-      const response = await axios.post("http://localhost:5001/api/users", {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/users`, {
         name,
         lastName,
         email,

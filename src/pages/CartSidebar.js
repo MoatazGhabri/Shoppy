@@ -27,7 +27,7 @@ const CartSidebar = ({ isOpen }) => {
 
   const fetchOrderedProducts = () => {
     axios
-      .get("http://localhost:5001/api/orders")
+      .get(`${process.env.REACT_APP_API_URL}/api/orders`)
       .then((response) => {
         setOrderedProducts(response.data);
       })
@@ -38,7 +38,7 @@ const CartSidebar = ({ isOpen }) => {
   const handleRemove = (productId) => {
    
     axios
-      .delete(`http://localhost:5001/api/orders/${productId}`)
+      .delete(`${process.env.REACT_APP_API_URL}/api/orders/${productId}`)
       .then(() => {
         fetchOrderedProducts(); // Refresh the ordered products list
       })

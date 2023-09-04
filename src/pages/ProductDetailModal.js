@@ -9,7 +9,7 @@ const ProductDetailModal = ({ product, onAddToPanel, onCancel }) => {
     
     // Send a request to the backend API to add the product to the "orders" collection
     axios
-      .post("http://localhost:5001/api/orders", {
+      .post(`${process.env.REACT_APP_API_URL}/api/orders`, {
         productName: product.name,
         price: product.price,
         quantity: quantity,

@@ -32,7 +32,7 @@ const Dashboard = () => {
 
   const fetchProducts = () => {
     axios
-      .get("http://localhost:5001/api/products")
+      .get(`${process.env.REACT_APP_API_URL}/api/products`)
       .then((response) => {
         setProducts(response.data);
       })

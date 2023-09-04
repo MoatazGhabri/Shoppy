@@ -24,7 +24,7 @@ const OrdersPage = () => {
 
   const fetchOrderedProducts = () => {
     axios
-      .get("http://localhost:5001/api/orders")
+      .get(`${process.env.REACT_APP_API_URL}/api/orders`)
       .then((response) => {
         setOrderedProducts(response.data);
       })
@@ -36,7 +36,7 @@ const OrdersPage = () => {
   const handleRemove = (productId) => {
    
       axios
-        .delete(`http://localhost:5001/api/orders/${productId}`)
+        .delete(`${process.env.REACT_APP_API_URL}/api/orders/${productId}`)
         .then(() => {
           fetchOrderedProducts(); // Refresh the ordered products list
         })
@@ -84,7 +84,7 @@ const OrdersPage = () => {
       address: formData.address,
       number: formData.number,
     };
-    axios.post("http://localhost:5001/api/comments", commentData)
+    axios.post(`${process.env.REACT_APP_API_URL}/api/comments`, commentData)
       .then((response) => {
         console.log("Form data sent successfully:", response.data);
         handleRemove(productId); // Remove the product from the orders collection
@@ -94,7 +94,7 @@ const OrdersPage = () => {
         console.log("Error sending form data:", error);
       });
 
-  axios.post("http://localhost:5001/api/users", Data)
+  axios.post(`${process.env.REACT_APP_API_URL}/api/users`, Data)
       .then((response) => {
         console.log(" data sent successfully:", response.data);
        
