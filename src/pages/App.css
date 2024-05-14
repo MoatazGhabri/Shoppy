@@ -208,3 +208,42 @@
   color: rgb(99, 141, 199);
   font-weight: bold;
 }
+
+
+/* App.css */
+
+.navbar {
+  background-color: white; /* Set background color to white */
+  padding: 10px 20px; /* Add padding for better spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.navbar__brand {
+  font-size: 24px; /* Adjust font size for brand */
+  font-weight: bold; /* Make brand font bold */
+}
+
+.desktop-navbar,
+.mobile-navbar {
+  list-style-type: none; /* Remove default list styles */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.desktop-navbar li,
+.mobile-navbar a {
+  display: inline-block; /* Display items horizontally */
+  margin-right: 20px; /* Add spacing between items */
+  color: #333; /* Set text color */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.navbar__button a {
+  margin-left: 20px; /* Add spacing between icons */
+  font-size: 24px; /* Adjust icon size */
+  color: #333; /* Set icon color */
+}
+
+.navbar__button a:hover {
+  color: #007bff; /* Change icon color on hover */
+}

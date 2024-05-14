@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
   }
+ 
   
   /* Modal Content */
   .modal-content {
@@ -20,7 +21,7 @@
     padding: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     max-width: 400px;
-    width: 100%;
+    width: 50%;
     text-align: center;
     position: relative;
   }
@@ -30,11 +31,8 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    background: none;
-    border: none;
     font-size: 24px;
     cursor: pointer;
-    color: #888;
   }
   
   /* Form Styling */
@@ -72,7 +70,7 @@
   
   .btn-success {
     color: #fff;
-    margin-right: 90px;
+    margin-right: 60px;
 
   }
   
@@ -80,3 +78,5 @@
     color: #fff;
     margin-right: 70px;
   }
+
+ 

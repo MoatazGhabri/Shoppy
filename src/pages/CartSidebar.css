@@ -2,16 +2,17 @@
 
 /* Styling for the main cart sidebar container */
 .cart-sidebar {
-    position: fixed;
-    top: 0;
-    right: -400px; /* Start offscreen */
-    width: 400px;
-    height: 100%;
-    background-color: white;
-    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.2);
-    transition: right 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  right: -100%; /* Initially hidden off-screen */
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out;
   }
   
+    
   /* Display the cart sidebar when it's open */
   .cart-sidebar.open {
     right: 0;
@@ -19,9 +20,8 @@
   
   /* Styling for the cart content area */
   .cart-content {
-    padding: 20px;
-    max-height: calc(100vh - 60px); /* Adjust as needed */
-    overflow-y: auto; 
+      padding: 20px;
+    
   }
   
   /* Styling for the added products list */

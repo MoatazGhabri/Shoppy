@@ -3,7 +3,7 @@ import "./sign.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-const UserRegistrationSidebar = ({ isOpen, onClose, onShow, onRegistrationSuccess }) => {
+const UserRegistrationSidebar = ({ isOpen, onClose, onShow }) => {
   // State to manage registration form inputs
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -12,41 +12,45 @@ const UserRegistrationSidebar = ({ isOpen, onClose, onShow, onRegistrationSucces
 
   const handleRegistration = async () => {
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/users`, {
+      const response = await axios.post(`http://localhost:5000/api/users`, {
         name,
         lastName,
         email,
         password,
       });
   
+      console.log("Response status:", response.status); // Add this line to check response status
+  
       if (response.status === 201) {
         console.log("User registered successfully");
         const userData = { name, lastName, email };
-        // Call a callback prop to pass the user data to the parent component
-        onRegistrationSuccess(userData);
-        // Optionally, navigate to a different page or show a success message
+        setName("");
+        setLastName("");
+        setEmail("");
+        setPassword("");
         toast.success("register successful!", {
-            position: "top-right",
-            autoClose: 3000, // Notification will close after 3 seconds
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-          });
+          position: "top-right",
+          autoClose: 3000, 
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
       }
     } catch (error) {
       console.error("Error registering user:", error);
-      toast.error("register error!, please try again", {
+      const errorMessage = error.response?.data?.message || "register error!, please try again";
+      toast.error(errorMessage, {
         position: "top-right",
-        autoClose: 3000, // Notification will close after 3 seconds
+        autoClose: 3000, 
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
       });
-      // Handle error, show error message, etc.
     }
   };
+  
   
 
   return (
@@ -85,7 +89,7 @@ const UserRegistrationSidebar = ({ isOpen, onClose, onShow, onRegistrationSucces
           <button type="button" onClick={handleRegistration}>
             CRÉER UN COMPTE
           </button>
-          <p>Tu n'as pas de compte ? <a href="#" onClick={onShow}>Login</a></p>
+          <p>Tu as un compte ? <a href="#" onClick={onShow}>Login</a></p>
 
         </form>
       </div>

@@ -5,12 +5,10 @@ function Ap() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleLogin = async (userData) => {
-    // Make API call to login route
     console.log('Logging in', userData);
   };
 
   const handleSignup = async (userData) => {
-    // Make API call to signup route
     console.log('Signing up', userData);
   };
 

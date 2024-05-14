@@ -13,8 +13,7 @@ import CartSidebar from "./CartSidebar";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Map from "./map";
-
-const Dashboard = () => {
+const Women = () => {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [panelProducts, setPanelProducts] = useState([]);
@@ -29,7 +28,6 @@ const Dashboard = () => {
   const [searchInput, setSearchInput] = useState("");
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(9999);
-
   // useEffect(() => {
   //   fetchProducts();
   // }, []);
@@ -47,7 +45,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchProductsByCategory = async () => {
       try {
-        const category = "Man"; // Specify the category you want to fetch
+        const category = "Women"; // Specify the category you want to fetch
   
         // Fetch products for the specified category
         const response = await axios.get(`http://localhost:5000/api/product?category=${category}`);
@@ -56,10 +54,10 @@ const Dashboard = () => {
         // Set the fetched products to state
         setProducts(response.data);
         const prices = response.data.map(product => product.price);
-      const minPrice = Math.min(...prices);
-      const maxPrice = Math.max(...prices);
-      setMinPrice(minPrice);
-      setMaxPrice(maxPrice);
+        const minPrice = Math.min(...prices);
+        const maxPrice = Math.max(...prices);
+        setMinPrice(minPrice);
+        setMaxPrice(maxPrice);
       } catch (error) {
         console.error("Failed to fetch products:", error);
       }
@@ -216,14 +214,14 @@ const Dashboard = () => {
         <Carousel showThumbs={true} infiniteLoop={true} autoPlay={true}>
           <div>
             <img
-              src="https://www.leparisien.fr/resizer/05bxwTAFxHWSV_n2UMHw2hKFZxI=/arc-photo-lpguideshopping/eu-central-1-prod/public/57ZHL2QO6YELET7SGI6OEZOIYY.jpg"
+              src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/summer-fashion-sale-flyer-design-template-e8e9c2228b0f09c6339cecf23fd2d0a2_screen.jpg?ts=1649930937"
               alt="Image 1"
               style={{ width: "100%", maxHeight: "70vh" }}
             />
           </div>
           <div>
             <img
-              src="https://www.redskins.fr/img/cms/Home%20Page/HomePageAH2023/Top-cat-soldes.jpg"
+              src="https://t4.ftcdn.net/jpg/01/86/24/71/360_F_186247102_7wpyEh7dYbMGRHGU3tvpVTOnjH0TwApu.jpg"
               alt="Image 2"
               style={{ width: "100%", maxHeight: "50vh" }}
             />
@@ -280,6 +278,7 @@ const Dashboard = () => {
             ))}
           </div>
         </div>
+
       {selectedProduct && (
         <ProductDetailModal
           product={selectedProduct}
@@ -292,12 +291,10 @@ const Dashboard = () => {
         onClose={handleSidebarToggle}
         addedProducts={panelProducts}
       >
-        {/* ... other cart content */}
       </CartSidebar>
       <Map/>
-
     </div>
   );
 };
 
-export default Dashboard;
+export default Women;

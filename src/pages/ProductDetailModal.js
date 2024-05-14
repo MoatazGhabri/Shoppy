@@ -2,37 +2,46 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+const generateUUID = () => {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    const r = Math.random() * 16 | 0;
+    const v = c === 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+};
 const ProductDetailModal = ({ product, onAddToPanel, onCancel }) => {
-  const [quantity, setQuantity] = useState(1); // Initialize quantity with 1
+  const [quantity, setQuantity] = useState(1); 
 
   const addToPanel = () => {
-    
-    // Send a request to the backend API to add the product to the "orders" collection
+    const userId = localStorage.getItem('userId') || generateUUID();
+    localStorage.setItem('userId', userId);
     axios
-      .post(`${process.env.REACT_APP_API_URL}/api/orders`, {
+      .post(`http://localhost:5000/api/orders`, {
+        userId,
         productName: product.name,
         price: product.price,
         quantity: quantity,
         image: product.image,
+        category:product.category,
 
       })
+      
       .then((response) => {
         toast.success("Product added successful to the panel!", {
           position: "top-right",
-          autoClose: 3000, // Notification will close after 3 seconds
+          autoClose: 3000, 
           hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
-        });
-        // Successfully added to orders collection, you can update the UI accordingly or show a success message
+        });      window.location.reload(); // Reload the page
+
       })
       .catch((error) => {
         console.log(error);
-        // Handle any errors that occurred during the API request
       });
 
-    // Close the modal after adding to panel
     onCancel();
   };
   return (
@@ -41,18 +50,15 @@ const ProductDetailModal = ({ product, onAddToPanel, onCancel }) => {
       <div className="modal-content">
         <div className="modal-header">
           <h5 className="modal-title">{product.name}</h5>
-          <button type="button" className="close" onClick={onCancel}>
-            &times;
-          </button>
+
+          <button className="close-button" onClick={onCancel}>X</button>
+           
         </div>
         <div className="modal-body">
-          <p>Price: {product.price} TND</p>
-          <p>Quantity: {product.quantity}</p>
-          <img
-            src={product.image}
-            alt={product.name}
-            style={{ maxWidth: "100%", maxHeight: "200px" }}
-          />
+          <img src={`data:image/png;base64,${product.image}`} alt={product.name} style={{ maxWidth: "70%", maxHeight: "70%",alignItems:"center" }}/>
+         
+           <p>Price: {product.price} TND</p>
+
         </div>
         <div className="modal-footer">
         <button type="button" className="btn btn-danger" onClick={onCancel}>

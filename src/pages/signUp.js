@@ -17,7 +17,7 @@ const UserLoginSidebar = ({ isOpen, onClose, onShowRegistration, setIsLoggedIn }
       }
 
       // Implement your actual login API call using axios
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/login`, {
+      const response = await axios.post(`http://localhost:5000/api/login`, {
         email,
         password,
       });
@@ -25,14 +25,19 @@ const UserLoginSidebar = ({ isOpen, onClose, onShowRegistration, setIsLoggedIn }
       if (response.status === 200) {
         console.log("User logged in successfully");
         localStorage.setItem('token', response.data.token);
+        localStorage.setItem('userName', response.data.name); 
+        localStorage.setItem('userLastName', response.data.lastName); 
+        localStorage.setItem('userEmail', email); 
 
-        setIsLoggedIn(true); // Update the parent component's isLoggedIn state
-        onClose(); // Close the login sidebar
+        setIsLoggedIn(true); 
+        setEmail("");
+        setPassword("");
+        onClose(); 
 
         // Show a success notification
         toast.success("Login successful!", {
           position: "top-right",
-          autoClose: 3000, // Notification will close after 3 seconds
+          autoClose: 3000, 
           hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,
@@ -46,13 +51,12 @@ const UserLoginSidebar = ({ isOpen, onClose, onShowRegistration, setIsLoggedIn }
       console.error("Error during login:", error);
       toast.error("Invalid credentials. Please try again.",{
         position: "top-right",
-        autoClose: 3000, // Notification will close after 3 seconds
+        autoClose: 3000, 
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
       });
-      // Handle error, show error message, etc.
     }
   };
   return (

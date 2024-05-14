@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     right: -100%; /* Initially hidden off-screen */
-    width: 300px;
+    width: 400px;
     height: 100%;
     background-color: #fff;
     box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
